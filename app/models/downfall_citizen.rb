@@ -1,0 +1,2 @@
+class DownfallCitizen < ApplicationRecord
+end
