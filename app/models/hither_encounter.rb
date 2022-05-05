@@ -1,0 +1,2 @@
+class HitherEncounter < ApplicationRecord
+end
