@@ -1,16 +1,16 @@
 class Api::V1::HitherencountersController < ApplicationController
     def index
-        @hitherencounters = Hither_Encounter.all
+        @hitherencounters = HitherEncounter.all
         render json: @hitherencounters
     end
 
     def show
-        @hitherencounters = Hither_Encounter.find(params[:id])
+        @hitherencounters = HitherEncounter.find(params[:id])
         render json: @hitherencounters
     end
 
     def create
-        @hitherencounters = Hither_Encounter.new(user_params)
+        @hitherencounters = HitherEncounter.new(user_params)
         if @hitherencounters.save
             render json: @hitherencounters
         else 
@@ -19,7 +19,7 @@ class Api::V1::HitherencountersController < ApplicationController
     end
 
     def update 
-        @hitherencounters = Hither_Encounter.find(params[:id])
+        @hitherencounters = HitherEncounter.find(params[:id])
         if @hitherencounters
             @hitherencounters.update(user_params)
             render json: {message: "Updated successfully"}, status: 200
@@ -29,7 +29,7 @@ class Api::V1::HitherencountersController < ApplicationController
     end
 
     def delete
-        @hitherencounters = Hither_Encounter.find(params[:id])
+        @hitherencounters = HitherEncounter.find(params[:id])
         if @hitherencounters
             @hitherencounters.destroy
             render json: {message: "Deleted encounter successfully"}, status: 200
