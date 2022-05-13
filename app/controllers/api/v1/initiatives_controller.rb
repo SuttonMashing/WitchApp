@@ -1,4 +1,4 @@
-class InitiativesController < ApplicationController
+class Api::V1::InitiativesController < ApplicationController
     def index
         @initiatives = Initiative.all
         render json: @initiatives
