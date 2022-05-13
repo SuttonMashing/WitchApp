@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :hitherencounters
       resources :downfallcitizens
-      resources :initiative
+      resources :initiatives
     end
   end
 end
