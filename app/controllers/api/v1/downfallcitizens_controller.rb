@@ -21,7 +21,11 @@ class Api::V1::DownfallcitizensController < ApplicationController
     def update 
         @downfallcitizens = DownfallCitizen.find(params[:id])
         if @downfallcitizens
-            @downfallcitizens.update(user_params)
+            @downfallcitizens.update(
+            name: params[:name],
+            honourific: params[:honourific],
+            roll: params[:roll]
+            )
             render json: {message: "Updated successfully"}, status: 200
         else 
             render error: {error: 'Unable to update citizen.'}, status: 400
