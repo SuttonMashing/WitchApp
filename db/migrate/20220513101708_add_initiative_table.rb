@@ -1,6 +1,6 @@
 class AddInitiativeTable < ActiveRecord::Migration[7.0]
     def change
-      create_table :initiative do |t|
+      create_table :initiatives do |t|
         t.string :name
         t.string :condition
         t.integer :initiative
