@@ -10,7 +10,9 @@ class Api::V1::DownfallcitizensController < ApplicationController
     end
 
     def create
-        @downfallcitizens = DownfallCitizen.new(user_params)
+        @downfallcitizens = DownfallCitizen.new(name: params[:name],
+        honourific: params[:honourific],
+        roll: params[:roll])
         if @downfallcitizens.save
             render json: @downfallcitizens
         else 

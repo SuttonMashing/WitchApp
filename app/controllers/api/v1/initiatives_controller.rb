@@ -10,7 +10,11 @@ class Api::V1::InitiativesController < ApplicationController
     end
 
     def create
-        @initiatives = Initiative.new(user_params)
+        @initiatives = Initiative.new(
+            name: params[:name],
+            initiative: params[:initiative],
+            health: params[:health],
+            condition: params[:condition])
         if @initiatives.save
             render json: @initiatives
         else 
@@ -21,7 +25,10 @@ class Api::V1::InitiativesController < ApplicationController
     def update 
         @initiatives = Initiative.find(params[:id])
         if @initiatives
-            @initiatives.update(user_params)
+            @initiatives.update(name: params[:name],
+            initiative: params[:initiative],
+            health: params[:health],
+            condition: params[:condition])
             render json: {message: "Updated successfully"}, status: 200
         else 
             render error: {error: 'Unable to update encounter.'}, status: 400
