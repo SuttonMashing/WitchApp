@@ -18,7 +18,7 @@ class Api::V1::InitiativesController < ApplicationController
         end
     end
 
-    def patch 
+    def update 
         @initiatives = Initiative.find(params[:id])
         if @initiatives
             @initiatives.update(user_params)
