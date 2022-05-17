@@ -35,13 +35,13 @@ class Api::V1::InitiativesController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @initiatives = Initiative.find(params[:id])
         if @initiatives
             @initiatives.destroy
-            render json: {message: "Deleted encounter successfully"}, status: 200
+            render json: {message: "Deleted initiative successfully"}, status: 200
         else
-            render error: {error: "Unable to delete encounter"}, status: 400
+            render error: {error: "Unable to delete initiative"}, status: 400
         end
     end 
 end
