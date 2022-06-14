@@ -1,4 +1,5 @@
 class Api::V1::HitherencountersController < ApplicationController
+
     def index
         @hitherencounters = HitherEncounter.all
         render json: @hitherencounters
